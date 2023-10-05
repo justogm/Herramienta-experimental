@@ -1,6 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-from constantes import *
+from src.constantes import *
 
 # Crear un DataFrame de pandas con los datos
 import pandas as pd
