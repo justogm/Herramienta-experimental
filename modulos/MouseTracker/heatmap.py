@@ -22,7 +22,7 @@ def generarImagenes(ruta):
     try:
         x = coordenadasMov[:, 0]
         y = coordenadasMov[:, 1]
-        plt.plot(x, y, linestyle='-', color='red', linewidth=dpi)  # Puedes ajustar el estilo y color según tus preferencias
+        plt.plot(x, y, linestyle='-', color='red', linewidth=(5))  # Puedes ajustar el estilo y color según tus preferencias
     except IndexError:
         pass
 

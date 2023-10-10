@@ -1,3 +1,0 @@
-LINK_CHATBOT = "https://www.figma.com/file/DPLiZBtnI6aVBmP12ZyMAc/SH-freud%3A-Mental-Health-AI-Chatbot-Website-(Community)?type=design&node-id=228%3A1799&mode=design&t=rvFtGOmKO3ZXL6yq-1"
-LINK_DASHBOARD_A = "https://www.figma.com/file/lN52uYDM8wAUvG38na91TW/Admin-Dashboard-Web-(Community)?type=design&node-id=2%3A3&mode=design&t=sKANTzPsP2LaFDKJ-1"
-LINK_DASHBOARD_B = "https://www.figma.com/file/Ap91mv3kmSM1xBvNzLzTw3/Test-B?type=design&node-id=0%3A1&mode=design&t=sKANTzPsP2LaFDKJ-1"
