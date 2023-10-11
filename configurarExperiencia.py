@@ -2,6 +2,19 @@ from platform import system
 import os
 import json
 
+
+pantalla = {}
+print("Inserte dimensiones de pantalla:")
+pantalla["ancho"] = input("\t|__ Ancho: ")
+pantalla["alto"] = input("\t|__ Alto: ")
+
+print("-"*20) 
+
+animacion = input("Desea generar animaciones? [s/n]: ")
+while not animacion.lower() in ["s", "n"]:
+    animacion = input("Ingrese una opción valida [s/n]: ")
+
+print("-"*20)
 print("Inserte links a proyectos de figma:")
 links = {}
 
@@ -15,7 +28,7 @@ while True:
     i += 1
     links[f"LINK_{i}"] = entrada
 
-if len(links) > 1:
+if len(links) >= 1:
     salida = open("links.py", "w")
     sistema = system()
     if sistema == "Windows":
@@ -24,8 +37,14 @@ if len(links) > 1:
         os.system("clear")
 
     print("Se evaluarán:")
+
     for i in links.keys():
         print("\t|__", links[i])
 
-    with open("links.json", "w") as archi:
-        json.dump(links, archi)
+    with open("config.json", "w") as archi:
+        config = {
+            "dimensionesPantalla" : pantalla,
+            "links" : links,
+            "decisionAnimacion" : animacion
+        }
+        json.dump(config, archi, indent=4)
