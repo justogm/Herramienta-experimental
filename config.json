@@ -3,8 +3,12 @@
         "ancho": "1920",
         "alto": "1080"
     },
+    "posInicial": {
+        "x": 960.0,
+        "y": 0
+    },
     "links": {
         "LINK_1": "https://www.figma.com/file/lN52uYDM8wAUvG38na91TW/Admin-Dashboard-Web-(Community)?type=design&node-id=2%3A3&mode=design&t=tJevkK37BpiDjLXS-1"
     },
-    "decisionAnimacion": "s"
+    "decisionAnimacion": "n"
 }

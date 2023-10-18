@@ -9,6 +9,26 @@ pantalla["ancho"] = input("\t|__ Ancho: ")
 pantalla["alto"] = input("\t|__ Alto: ")
 
 print("-"*20) 
+pos = input("Seleccione posición de inicio:\n|_ 1. Norte\n|_ 2. Sur\n|_ 3. Oeste\n|_ 4. Este\n|_ 5. Centro\n|_ ")
+pos = int(pos)
+while 1 < pos or pos > 5:
+    pos = input("Seleccione una opción válida: ")
+
+posInicial = {
+    "x":None,
+    "y":None
+}
+
+switch = {
+    "1":[int(pantalla["ancho"])/2,0],
+    "2":[int(pantalla["ancho"])/2,int(pantalla["alto"])],
+    "3":[0,int(pantalla["alto"])/2],
+    "4":[int(pantalla["ancho"]), int(pantalla["alto"])/2]
+}
+
+posInicial["x"], posInicial["y"] = switch[str(pos)][0], switch[str(pos)][1]
+
+print("-"*20) 
 
 animacion = input("Desea generar animaciones? [s/n]: ")
 while not animacion.lower() in ["s", "n"]:
@@ -44,6 +64,7 @@ if len(links) >= 1:
     with open("config.json", "w") as archi:
         config = {
             "dimensionesPantalla" : pantalla,
+            "posInicial" : posInicial,
             "links" : links,
             "decisionAnimacion" : animacion
         }
