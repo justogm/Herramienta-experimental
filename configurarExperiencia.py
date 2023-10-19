@@ -2,16 +2,11 @@ from platform import system
 import os
 import json
 
-
-pantalla = {}
-print("Inserte dimensiones de pantalla:")
-pantalla["ancho"] = input("\t|__ Ancho: ")
-pantalla["alto"] = input("\t|__ Alto: ")
-
+# Se registra la posición de inicio
 print("-"*20) 
 pos = input("Seleccione posición de inicio:\n|_ 1. Norte\n|_ 2. Sur\n|_ 3. Oeste\n|_ 4. Este\n|_ 5. Centro\n|_ ")
 pos = int(pos)
-while 1 < pos or pos > 5:
+while 1 > int(pos) or int(pos) > 5:
     pos = input("Seleccione una opción válida: ")
 
 posInicial = {
@@ -20,10 +15,11 @@ posInicial = {
 }
 
 switch = {
-    "1":[int(pantalla["ancho"])/2,0],
-    "2":[int(pantalla["ancho"])/2,int(pantalla["alto"])],
-    "3":[0,int(pantalla["alto"])/2],
-    "4":[int(pantalla["ancho"]), int(pantalla["alto"])/2]
+    "1":["x/2","0"],
+    "2":["x/2","y"],
+    "3":["0","y/2"],
+    "4":["x", "y/2"],
+    "5":["x/2", "y/2"]
 }
 
 posInicial["x"], posInicial["y"] = switch[str(pos)][0], switch[str(pos)][1]
@@ -63,7 +59,6 @@ if len(links) >= 1:
 
     with open("config.json", "w") as archi:
         config = {
-            "dimensionesPantalla" : pantalla,
             "posInicial" : posInicial,
             "links" : links,
             "decisionAnimacion" : animacion

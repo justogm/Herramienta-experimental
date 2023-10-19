@@ -1,14 +1,10 @@
 {
-    "dimensionesPantalla": {
-        "ancho": "1920",
-        "alto": "1080"
-    },
     "posInicial": {
-        "x": 960.0,
-        "y": 0
+        "x": "x/2",
+        "y": "y/2"
     },
     "links": {
-        "LINK_1": "https://www.figma.com/file/lN52uYDM8wAUvG38na91TW/Admin-Dashboard-Web-(Community)?type=design&node-id=2%3A3&mode=design&t=tJevkK37BpiDjLXS-1"
+        "LINK_1": "https://www.figma.com/proto/Ap91mv3kmSM1xBvNzLzTw3/Test-B?type=design&node-id=8-1867&t=I0ZGXX69okf2wbPr-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=8%3A1867&mode=design"
     },
     "decisionAnimacion": "n"
 }

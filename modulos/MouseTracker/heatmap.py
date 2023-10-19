@@ -7,11 +7,21 @@ import os
 import plotly.express as px
 
 def generarImagenes(ruta):
+    '''generarImagenes Genera imágenes a partir
+    de los registros de interacciones del usuario.
+
+    A partir de los registros de movimientos, clicks y scroll
+    realiza gráficas sobre la imágen presentada al usuario para
+    su posterior análisis
+
+    Args:
+        ruta (str): Ruta donde debe almacenarse la imágen.
+    '''
     # Cargar la imagen
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     imagen = plt.imread('datos/captura.png')
 
-    # Cargar las coordenadas desde el archivo (supongamos que el archivo es un archivo CSV)
+    # Cargar las coordenadas desde el archivo 
     coordenadasMov = np.genfromtxt('datos/movimientos.csv', delimiter=',', skip_header=1)
 
     dpi = 50
@@ -24,7 +34,7 @@ def generarImagenes(ruta):
     try:
         x = coordenadasMov[:, 0]
         y = coordenadasMov[:, 1]
-        plt.plot(x, y, linestyle='-', color='red', linewidth=(ANCHO_PANTALLA+ALTO_PANTALLA)*0.001, alpha=0.5)  # Puedes ajustar el estilo y color según tus preferencias
+        plt.plot(x, y, linestyle='-', color='red', linewidth=(ANCHO_PANTALLA+ALTO_PANTALLA)*0.001, alpha=0.5)
     except IndexError:
         pass
 
