@@ -2,7 +2,7 @@ import webbrowser
 import time
 import pyautogui
 from modulos.MouseTracker.mousetracker import MouseTracker
-from modulos.MouseTracker.heatmap import generarImagenes, generarAnimacion
+from modulos.MouseTracker.graficador import Graficador
 import os
 import json
 
@@ -59,6 +59,7 @@ class Test:
         Args:
             tiempoDeCarga (int, optional): Tiempo que requiere la interfaz hasta estar funcional. Por defecto 8.
         '''
+        graficador = Graficador(self.DIMENSIONES_PANTALLA[0], self.DIMENSIONES_PANTALLA[1])
         for link, i in zip(self.links.keys(), range(len(self.links.keys()))):
             mouseTracker = MouseTracker()
             print(f"Comenzando evaluación N°{i+1}")
@@ -73,9 +74,9 @@ class Test:
             mouseTracker.start_tracking()
             ruta = f"{os.path.dirname(os.path.abspath(__file__))}/imgs/Prototipo{i}"
             pyautogui.press('f11')
-            generarImagenes(ruta)
-            # if(self.animacion):
-            #     generarAnimacion(ruta = f"{os.path.dirname(os.path.abspath(__file__))}/imgs/VideoProt{i}.mp4")
+            graficador.generarImagenes(ruta)
+            if(self.animacion):
+                graficador.generarAnimacion(ruta = f"{os.path.dirname(os.path.abspath(__file__))}/imgs/VideoProt{i}.gif")
 
     def prepararFigma(self):
         '''prepararFigma Prepara para el usuario la interfaz de figma.
